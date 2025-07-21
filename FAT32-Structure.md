@@ -41,3 +41,69 @@
   - Atributos (diretório, oculto, sistema etc.)
   - Cluster inicial
   - Tamanho do arquivo (em bytes)
+
+
+#Resumindo:
+
+FAT32
+
+├── 1. MBR (Master Boot Record)
+
+│   └── Tabela de Partições + Código de Boot
+
+│
+
+├── 2. VBR (Volume Boot Record) / Boot Sector
+
+│   ├── BPB (BIOS Parameter Block)
+
+│   ├── Código de Boot
+
+│   └── Informações do Sistema de Arquivos
+
+│
+
+├── 3. FSInfo (Setor de Informação)
+
+│   ├── Setor reservado
+
+│   └── Contém info sobre espaço livre e cluster próximo livre
+
+│
+
+├── 4. FAT (File Allocation Table)
+
+│   ├── 2 cópias redundantes
+
+│   ├── Tabela de alocação de clusters
+
+│   └── Indica quais clusters estão livres, ocupados ou final de arquivo (EOF)
+
+│
+
+├── 5. Área de Dados
+
+│   ├── Diretórios e Arquivos
+
+│   ├── Cada cluster aponta para o próximo
+
+│   └── Raiz do sistema de arquivos pode estar em qualquer lugar (diferente do FAT16)
+
+│
+
+└── 6. Diretórios
+
+|    ├── Diretório Raiz
+
+|    ├── Diretórios Subordinados
+    
+|    └── Entradas com:
+    
+|        ├── Nome do Arquivo (8.3 ou LFN)
+        
+|        ├── Atributos
+        
+|        ├── Cluster inicial
+        
+|        └── Tamanho do Arquivo
+
