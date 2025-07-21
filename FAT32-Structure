@@ -25,7 +25,7 @@ FAT32
     ├── Diretório Raiz
     ├── Diretórios Subordinados
     └── Entradas com:
-        ├── Nome do Arquivo (8.3 ou LFN)
+        ├── Nome do Arquivo (SFN ou LFN)
         ├── Atributos
         ├── Cluster inicial
         └── Tamanho do Arquivo
